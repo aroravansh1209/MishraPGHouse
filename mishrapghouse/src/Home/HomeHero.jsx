@@ -35,7 +35,7 @@ function BuildingCard({ title, image }) {
       <img
         src={image}
         alt={title}
-        className="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:scale-105 transition-transform duration-500"
+        className="absolute inset-0 w-full  object-cover brightness-75 group-hover:scale-105 transition-transform duration-500"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
       <div className="absolute bottom-0 left-0 right-0 p-4 z-20 flex items-center justify-between">
@@ -60,7 +60,7 @@ export default function HomeHero() {
   }, [])
 
   return (
-    <main className="min-h-screen bg-slate-50">
+    <main className="bg-white">
       <section className="relative w-full overflow-hidden">
         <div className="mx-auto max-w-[1440px] px-4 py-6 md:px-8 lg:px-12">
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">

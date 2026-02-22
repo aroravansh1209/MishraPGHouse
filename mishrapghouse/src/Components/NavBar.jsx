@@ -29,8 +29,8 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <header className="w-full bg-slate-50 border-b border-slate-200">
-      <nav className="mx-auto max-w-[1440px] px-4 md:px-8 lg:px-12 flex items-center justify-between h-16">
+    <header className="sticky top-0 z-30 w-full border-b border-slate-200 bg-white/80 backdrop-blur">
+      <nav className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-4 md:px-8 lg:px-12">
         
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5">
@@ -46,18 +46,27 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <li key={link.label}>
-              <a
-                href={link.href}
-                className="text-sm font-medium text-[#1a2744]/70 hover:text-[#1a2744]"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="hidden items-center gap-6 md:flex">
+          <ul className="flex items-center gap-6 lg:gap-8">
+            {navLinks.map((link) => (
+              <li key={link.label}>
+                <a
+                  href={link.href}
+                  className="relative text-sm font-medium text-[#1a2744]/70 transition-colors hover:text-[#1a2744]"
+                >
+                  <span>{link.label}</span>
+                  <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-[#d4a843] transition-all duration-300 group-hover:w-full peer-hover:w-full" />
+                </a>
+              </li>
+            ))}
+          </ul>
+          <a
+            href="#contact"
+            className="rounded-full bg-[#1a2744] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#0f172a]"
+          >
+            Book a stay
+          </a>
+        </div>
 
         {/* Mobile Button */}
         <button
